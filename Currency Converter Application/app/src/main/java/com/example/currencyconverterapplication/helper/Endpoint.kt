@@ -10,6 +10,5 @@ class Endpoint {
 
         //Sub URL
         const val LATEST_URL = "latest"
-        const val CONVERT_URL = "convert"
     }
 }

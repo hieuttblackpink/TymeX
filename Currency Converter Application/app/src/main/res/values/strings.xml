@@ -8,4 +8,5 @@
     <string name="convert">Convert</string>
     <string name="result">Result</string>
     <string name="converted_amount">Converted amount</string>
+    <string name="change">SWITCH</string>
 </resources>

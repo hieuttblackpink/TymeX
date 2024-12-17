@@ -4,7 +4,7 @@ androidxHiltCompiler = "1.2.0"
 androidxHiltLifecycleViewmodel = "1.0.0-alpha03"
 converterGson = "2.9.0"
 converterScalars = "2.9.0"
-hiltAndroid = "2.49"
+hiltAndroid = "2.51.1"
 hiltAndroidCompiler = "2.51.1"
 hiltAndroidCompilerVersion = "2.51.1"
 hiltAndroidGradlePlugin = "2.53.1"
@@ -13,12 +13,12 @@ hiltCompilerVersion = "1.2.0"
 hiltLifecycleViewmodel = "2.45"
 hiltLifecycleViewmodelVersion = "1.2.0"
 hiltNavigationCompose = "1.2.0"
-kotlin = "1.9.0"
+kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-kotlinxCoroutinesAndroid = "1.7.1"
+kotlinxCoroutinesAndroid = "1.7.3"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
 composeBom = "2024.12.01"
@@ -34,7 +34,9 @@ androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler" }
 androidx-hilt-compiler-v100 = { module = "androidx.hilt:hilt-compiler", version.ref = "androidxHiltCompiler" }
 androidx-hilt-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompilerVersion" }
 androidx-hilt-hilt-compiler2 = { module = "androidx.hilt:hilt-compiler" }
+androidx-hilt-hilt-compiler3 = { module = "androidx.hilt:hilt-compiler", version.ref = "androidxHiltLifecycleViewmodel" }
 androidx-hilt-hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel" }
+androidx-hilt-hilt-lifecycle-viewmodel2 = { module = "androidx.hilt:hilt-lifecycle-viewmodel" }
 androidx-hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel" }
 androidx-hilt-lifecycle-viewmodel-v100alpha0 = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "androidxHiltLifecycleViewmodel" }
 androidx-hilt-lifecycle-viewmodel-v120 = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "hiltLifecycleViewmodelVersion" }
@@ -44,12 +46,19 @@ androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-lived
 androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version = "2.6.1" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version = "2.6.1" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 converter-scalars = { module = "com.squareup.retrofit2:converter-scalars" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "hiltAndroid" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler" }
 dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler" }
+dagger-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroid" }
 dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler" }
+google-dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "hiltAndroid" }
+google-hilt-android = { module = "com.google.dagger:hilt-android" }
+google-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
 google-material = { module = "com.google.android.material:material", version.ref = "material" }
 hilt-android = { module = "com.google.dagger:hilt-android" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
@@ -58,6 +67,7 @@ hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-p
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroidGradlePlugin" }
 hilt-compiler-v2381 = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompiler" }
 hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "hiltLifecycleViewmodel" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "androidxHiltLifecycleViewmodel" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -71,14 +81,20 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
 material = { module = "com.google.android.material:material" }
 material-spinner = { module = "com.jaredrummler:material-spinner", version.ref = "materialSpinner" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit2-converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "converterScalars" }
+hilt = { group = 'com.google.dagger', name = 'hilt-android', version = '2.51.1'}
+androidx-hilt = { group = 'androidx.hilt', name = 'hilt-navigation-compose', version = '1.2.0'}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version = '2.0.0' }
+ksp = { id = "com.google.devtools.ksp", version = "2.0.0-1.0.23" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version = "2.51.1" }
 

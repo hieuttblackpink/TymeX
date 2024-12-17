@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
@@ -19,21 +20,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/convergence"
-            android:textSize="30sp"
-            android:textAlignment="center"
             android:text="@string/currency_converter"
-            android:textColor="@color/main_blue" />
+            android:textAlignment="center"
+            android:textColor="@color/main_blue"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/txtFrom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/convergence"
-            android:textSize="20sp"
-            android:text="@string/from"/>
+            android:text="@string/from"
+            android:textSize="20sp" />
 
         <com.jaredrummler.materialspinner.MaterialSpinner
             android:id="@+id/spnFirstCountry"
@@ -41,24 +42,39 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/convergence"
             android:text="@string/afn"
             android:textColor="#757575"
             android:textSize="15sp"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/changeButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/btn_main_round"
+                android:contentDescription="@string/change"
+                app:srcCompat="@android:drawable/stat_notify_sync"
+                tools:ignore="ImageContrastCheck" />
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/txtTo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/convergence"
-            android:textSize="20sp"
-            android:text="@string/to"/>
+            android:text="@string/to"
+            android:textSize="20sp" />
 
         <com.jaredrummler.materialspinner.MaterialSpinner
             android:id="@+id/spnSecondCountry"
@@ -66,36 +82,41 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/convergence"
             android:text="@string/afn"
             android:textColor="#757575"
             android:textSize="15sp" />
-
-
-        <TextView
-            android:id="@+id/txtFirstCurrencyName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etFirstCurrency"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text_input_with_border"
             android:ellipsize="start"
+            android:fontFamily="@font/convergence"
             android:hint="@string/amount"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:textSize="15sp"
-            android:fontFamily="@font/convergence"
-            android:background="@drawable/edit_text_input_with_border"
             tools:ignore="VisualLintTextFieldSize" />
+
+        <TextView
+            android:id="@+id/txtFirstCurrencyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/convergence"
+            android:paddingStart="20dp"
+            android:paddingEnd="45dp"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnConvert"
@@ -104,7 +125,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/btn_main_round"
             android:fontFamily="@font/convergence"
             android:text="@string/convert"
@@ -119,12 +140,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <RelativeLayout
+            android:id="@+id/lytResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/lytResult"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp">
 
@@ -133,16 +154,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/convergence"
-                android:textSize="20sp"
-                android:text="@string/result"/>
+                android:text="@string/result"
+                android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/txtSecondCurrencyName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtSecondCurrencyName"
+                android:layout_alignParentEnd="true"
                 android:fontFamily="@font/convergence"
                 android:textSize="20sp"
-                android:layout_alignParentEnd="true"
                 tools:ignore="RelativeOverlap" />
         </RelativeLayout>
 
@@ -154,15 +175,16 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_input_with_border"
             android:enabled="false"
+            android:fontFamily="@font/convergence"
             android:hint="@string/converted_amount"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:fontFamily="@font/convergence"
-            android:textSize="15sp"
-            android:background="@drawable/edit_text_input_with_border"
+            android:textColor="@color/main_green"
+            android:textSize="20sp"
             tools:ignore="VisualLintTextFieldSize" />
 
     </LinearLayout>

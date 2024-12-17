@@ -1,8 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.dagger.hilt)
     kotlin("kapt")
-    id("com.google.dagger.hilt.android") version "2.44" apply false
     id("dagger.hilt.android.plugin")
 }
 
@@ -77,13 +79,17 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.material.spinner)
-    implementation(libs.dagger.hilt.android)
     implementation(libs.logging.interceptor)
-    implementation(libs.androidx.hilt.navigation.compose)
-    kapt(libs.dagger.hilt.compiler)
-    kapt(libs.androidx.hilt.hilt.compiler2)
-    kapt(libs.hilt.android.compiler)
-    kapt(libs.dagger.compiler)
+    implementation(libs.dagger)
+    annotationProcessor(libs.google.dagger.compiler)
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.google.hilt.android.compiler)
+    //implementation(libs.androidx.hilt.lifecycle.viewmodel.v100alpha0)
+    implementation(libs.hilt.navigation.compose)
+    kapt(libs.androidx.hilt.hilt.compiler3)
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.kotlin.stdlib)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -91,4 +97,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
+
+kapt {
+    correctErrorTypes = true
+    showProcessorStats = true
 }
