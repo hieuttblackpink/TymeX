@@ -66,12 +66,23 @@ com.example.currencyconverterapplication
    ```
 
 2. **Setup API Key**
-   - Replace `<YOUR_API_KEY>` in the `Endpoint.kt` file or wherever the base URL/API key is set.
+   - Replace `<YOUR_API_KEY>` in the `build.gradle.kts` file or wherever the base URL/API key is set.
 
    Example:
-   ```kotlin
-   const val BASE_URL = "https://api.exchangeratesapi.io/"
-   const val API_KEY = "YOUR_API_KEY"
+   ```gradle
+   buildTypes {
+        debug {
+            buildConfigField("String", "API_KEY", "\"YOUR_API_KEY2\"")
+        }
+        release {
+            buildConfigField("String", "API_KEY", "\"YOUR_API_KEY\"")
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
    ```
 
 3. **Build the Project**
