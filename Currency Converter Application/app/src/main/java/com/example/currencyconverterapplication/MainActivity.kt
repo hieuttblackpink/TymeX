@@ -17,6 +17,8 @@ import com.example.currencyconverterapplication.helper.Resource
 import com.example.currencyconverterapplication.helper.Utiltity
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import java.time.Instant
+import java.time.ZoneId
 import java.util.Currency
 import java.util.Locale
 
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     //View model
     private val viewModel: CurrencyViewModel by viewModels()
 
-    @RequiresApi(Build.VERSION_CODES.M)
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -137,6 +139,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setUpClickListener(){
         //Convert button clicked - check for empty string and internet then do the conversion
         binding.btnConvert.setOnClickListener {
@@ -166,6 +169,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun doConversion(){
 
         //hide keyboard
@@ -192,6 +196,7 @@ class MainActivity : AppCompatActivity() {
      *
      */
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n", "DefaultLocale")
     private fun observeUi() {
         fun String.fullTrim() = trim().replace("\uFEFF", "")
@@ -215,6 +220,12 @@ class MainActivity : AppCompatActivity() {
 
                         //set the value in the second edit text field
                         binding.etSecondCurrency.setText(formattedString)
+
+                        //set show time
+                        val timeStamp = result.data.timestamp.toLong()
+                        val time = Instant.ofEpochMilli(timeStamp).atZone(ZoneId.systemDefault())
+
+                        binding.txtTime.text = "Last updated: ${time.hour} : ${time.minute}"
 
                         //stop progress bar
                         binding.prgLoading.visibility = View.GONE

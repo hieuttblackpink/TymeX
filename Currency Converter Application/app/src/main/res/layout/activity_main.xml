@@ -62,7 +62,8 @@
                 android:background="@drawable/btn_main_round"
                 android:contentDescription="@string/change"
                 app:srcCompat="@android:drawable/stat_notify_sync"
-                tools:ignore="ImageContrastCheck" />
+                tools:ignore="ImageContrastCheck"
+                tools:srcCompat="@drawable/material_symbols__currency_exchange_rounded" />
         </RelativeLayout>
 
         <TextView
@@ -186,6 +187,14 @@
             android:textColor="@color/main_green"
             android:textSize="20sp"
             tools:ignore="VisualLintTextFieldSize" />
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/convergence"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </ScrollView>
